@@ -132,6 +132,7 @@ function SkillBubble({
 }
 
 
+
 function ConnectionLines() {
   const points = [
     new THREE.Vector3(-1.2, 0.1, 0),
@@ -139,21 +140,21 @@ function ConnectionLines() {
     new THREE.Vector3(1.2, 0.1, 0),
   ];
 
-  const geometry =
-    new THREE.BufferGeometry().setFromPoints(
-      points
-    );
-
-  return (
-    <line geometry={geometry}>
-      <lineBasicMaterial
-        color="#c4b5fd"
-        transparent
-        opacity={0.45}
-      />
-    </line>
+  const geometry = new THREE.BufferGeometry().setFromPoints(
+    points
   );
+
+  const material = new THREE.LineBasicMaterial({
+    color: "#c4b5fd",
+    transparent: true,
+    opacity: 0.45,
+  });
+
+  const line = new THREE.Line(geometry, material);
+
+  return <primitive object={line} />;
 }
+
 
 
 function Scene() {

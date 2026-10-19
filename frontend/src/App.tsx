@@ -70,8 +70,8 @@ function App() {
         />
         {/* Community Details */}
         <Route
-  path="/communities/:communityId"
-  element={<CommunityDetails />}
+           path="/communities/:communityId"
+            element={<CommunityDetails />}
 />
 
       </Routes>
