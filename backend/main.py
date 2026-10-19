@@ -50,6 +50,11 @@ app = FastAPI(
 # CORS
 # =========================================================
 
+
+# =========================================================
+# CORS
+# =========================================================
+
 frontend_url = os.getenv(
     "FRONTEND_URL",
     "http://localhost:5173"
@@ -57,11 +62,11 @@ frontend_url = os.getenv(
 
 allowed_origins = [
     "http://localhost:5173",
+    "https://community-link-6.onrender.com",
 ]
 
 if frontend_url not in allowed_origins:
     allowed_origins.append(frontend_url)
-
 
 app.add_middleware(
     CORSMiddleware,
@@ -70,6 +75,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 # =========================================================
