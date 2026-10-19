@@ -10,6 +10,7 @@ import Messages from "./pages/Messages";
 import Profile from "./pages/Profile";
 import Requests from "./pages/Requests";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import CommunityDetails from "./pages/CommunityDetails";
 
 
@@ -62,6 +63,11 @@ function App() {
           path="/requests"
           element={<Requests />}
         />
+
+        <Route
+          path="/register"
+          element={<Register />}
+/>
 
         {/* Login */}
         <Route
